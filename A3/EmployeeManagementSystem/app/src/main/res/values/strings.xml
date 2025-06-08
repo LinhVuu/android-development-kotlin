@@ -20,7 +20,7 @@
     <string name="phone_number">Phone Number: 04123456789</string>
     <string name="work_info_label">Work Information</string>
     <string name="email_label">Email</string>
-    <string name="email">Email: example@gmail.com</string>
+    <string name="email">example@gmail.com</string>
     <string name="location_label">Location</string>
     <string name="location">Australia</string>
     <string name="position_label">Position</string>
@@ -30,19 +30,20 @@
     <string name="manager_label">Report To</string>
     <string name="manager">Linh Vuu</string>
     <string name="date_hired_label">Date Hired</string>
-    <string name="date_hired">Date Hired: DD/MM/YYYY</string>
+    <string name="date_hired">DD/MM/YYYY</string>
     <string name="start_date_label">Start Date</string>
-    <string name="start_date">Start Date: DD/MM/YYYY</string>
+    <string name="start_date">DD/MM/YYYY</string>
     <string name="address_label">Address</string>
     <string name="address">Street Address</string>
     <string name="city_label">City</string>
     <string name="city">City, State</string>
     <string name="ongoing_employee_checkbox">On-going Employee</string>
     <string name="end_date_label">End Date</string>
-    <string name="end_date">End Date: DD/MM/YYYY</string>
+    <string name="end_date">DD/MM/YYYY</string>
     <string name="latest_salary_label">Latest Salary</string>
     <string name="latest_salary">e.g 50.5</string>
     <string name="salary_unit">AUD/hour</string>
     <string name="add_employee">Add New</string>
     <string name="main_title">Employee List</string>
+    <string name="note_required_fields">Note:\n\nAll fields are required, except "End Date".</string>
 </resources>

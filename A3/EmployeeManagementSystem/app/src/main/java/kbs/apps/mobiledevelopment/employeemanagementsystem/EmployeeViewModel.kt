@@ -1,6 +1,7 @@
 package kbs.apps.mobiledevelopment.employeemanagementsystem
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
@@ -19,6 +20,7 @@ class EmployeeViewModel(application: Application) : AndroidViewModel(application
 
     fun addEmployee(employee: Employee) = viewModelScope.launch(Dispatchers.IO) {
         repository.insertEmployee(employee)
+        Log.d("Insert", "Employee inserted: $employee")
     }
 
 }

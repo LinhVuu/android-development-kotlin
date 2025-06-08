@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 
 class EmployeeRepository (private val employeeDao: EmployeeDao)
 {
-    val allEmployees: LiveData<List<Employee>> = employeeDao.allEmployees()
+    val allEmployees: LiveData<List<Employee>> = employeeDao.getAllEmployees()
 
     @WorkerThread
     suspend fun insertEmployee(employee: Employee)

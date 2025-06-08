@@ -7,9 +7,9 @@
     android:layout_height="match_parent"
     tools:context=".AddEmployeeActivity">
 
-    <!-- Profile Image -->
+    <!-- Page Title -->
     <TextView
-        android:id="@+id/pageTitle2"
+        android:id="@+id/pageTitle"
         style="@style/TitleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,34 +21,36 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.01" />
 
+    <!-- Profile Image -->
     <ImageView
         android:id="@+id/profileImage"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/snow_white"
-        android:scaleType="centerCrop"
+        android:layout_marginTop="12dp"
         android:background="@drawable/default_photo"
-        app:layout_constraintTop_toBottomOf="@id/pageTitle2"
+        android:scaleType="centerCrop"
+        android:src="@drawable/default_photo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="12dp" />
+        app:layout_constraintTop_toBottomOf="@id/pageTitle"
+        app:layout_constraintVertical_bias="0.0" />
 
     <!-- First Name -->
-
-    <!-- Last Name -->
     <EditText
         android:id="@+id/editTextFirstName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_width="270dp"
+        android:layout_height="45dp"
         android:hint="@string/first_name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@id/profileImage"
-        app:layout_constraintTop_toTopOf="@id/profileImage"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toEndOf="@+id/profileImage"
+        app:layout_constraintTop_toBottomOf="@+id/pageTitle"
+        app:layout_constraintVertical_bias="0.015" />
 
-    <!-- Street Address -->
+    <!-- Last Name -->
     <EditText
         android:id="@+id/editTextLastName"
         android:layout_width="0dp"
@@ -61,14 +63,7 @@
         app:layout_constraintTop_toBottomOf="@id/editTextFirstName"
         app:layout_constraintVertical_bias="0.0" />
 
-    <!-- City -->
-
-    <!-- Phone -->
-
-    <!-- Work Information Label -->
-
-    <!-- Email -->
-
+    <!-- Street Address -->
     <EditText
         android:id="@+id/editTextAddress"
         android:layout_width="0dp"
@@ -81,6 +76,7 @@
         app:layout_constraintTop_toBottomOf="@id/editTextLastName"
         app:layout_constraintVertical_bias="0.0" />
 
+    <!-- City -->
     <EditText
         android:id="@+id/editTextCity"
         android:layout_width="0dp"
@@ -93,6 +89,7 @@
         app:layout_constraintTop_toBottomOf="@id/editTextAddress"
         app:layout_constraintVertical_bias="0.0" />
 
+    <!-- Phone -->
     <EditText
         android:id="@+id/editTextPhone"
         android:layout_width="0dp"
@@ -106,6 +103,7 @@
         app:layout_constraintTop_toBottomOf="@id/editTextCity"
         app:layout_constraintVertical_bias="0.0" />
 
+    <!-- Work Information Label -->
     <TextView
         android:id="@+id/workInformationLabel"
         style="@style/TitleText"
@@ -118,45 +116,67 @@
         app:layout_constraintHorizontal_bias="0.079"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editTextPhone"
-        app:layout_constraintVertical_bias="0.042" />
+        app:layout_constraintVertical_bias="0.046" />
+
+    <!-- Email -->
+    <LinearLayout
+        android:id="@+id/layoutEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/workInformationLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/email_label"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp" />
+
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="45dp"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress" />
+    </LinearLayout>
 
     <!-- Position -->
-
-    <EditText
-        android:id="@+id/editTextEmail"
-        android:layout_width="377dp"
-        android:layout_height="45dp"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress"
+    <LinearLayout
+        android:id="@+id/layoutPosition"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/workInformationLabel"
-        app:layout_constraintVertical_bias="0.03" />
+        app:layout_constraintTop_toBottomOf="@id/layoutEmail"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="@string/position_label" />
+
+        <EditText
+            android:id="@+id/editTextPosition"
+            android:layout_width="0dp"
+            android:layout_height="43dp"
+            android:layout_weight="1"
+            android:hint="@string/position" />
+    </LinearLayout>
 
     <!-- Salary -->
-
-    <EditText
-        android:id="@+id/editTextPosition"
-        android:layout_width="378dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="8dp"
-        android:hint="@string/position"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextEmail"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <!-- Department -->
-
-    <!-- Report To -->
-
     <LinearLayout
         android:id="@+id/layoutSalary"
-        android:layout_width="378dp"
+        android:layout_width="0dp"
         android:layout_height="47dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
@@ -164,12 +184,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextPosition"
+        app:layout_constraintTop_toBottomOf="@+id/layoutPosition"
         app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:layout_width="96dp"
             android:layout_height="wrap_content"
+            android:paddingStart="8dp"
             android:paddingEnd="4dp"
             android:text="@string/latest_salary_label" />
 
@@ -183,96 +204,168 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingEnd="4dp"
             android:paddingStart="4dp"
             android:text="@string/salary_unit" />
 
     </LinearLayout>
 
+    <!-- Department -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutDepartment"
-        android:layout_width="380dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layoutSalary"
+        app:layout_constraintTop_toBottomOf="@+id/layoutSalary"
         app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/labelDepartment"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="20dp"
             android:layout_marginEnd="12dp"
             android:gravity="end"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
             android:text="@string/department_label"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/spinnerDepartment"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.555" />
 
         <Spinner
             android:id="@+id/spinnerDepartment"
-            android:layout_width="281dp"
-            android:layout_height="27dp"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
             android:spinnerMode="dropdown"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/labelDepartment"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!-- Report To -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutManager"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.548"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutDepartment"
+        app:layout_constraintVertical_bias="0.004">
+
+        <TextView
+            android:id="@+id/labelManager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="25dp"
+            android:gravity="end"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="@string/manager_label"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/spinnerManager"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinnerManager"
+            android:layout_width="0dp"
+            android:layout_height="27dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/labelManager"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.571"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- Date Hired -->
+    <LinearLayout
+        android:id="@+id/layoutDateHired"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutManager">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="@string/date_hired_label" />
+
+        <EditText
+            android:id="@+id/editTextDateHired"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:hint="@string/date_hired"
+            android:inputType="date" />
+    </LinearLayout>
 
     <!-- Start Date -->
+    <LinearLayout
+        android:id="@+id/layoutStartDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutDateHired">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="@string/start_date_label" />
+
+        <EditText
+            android:id="@+id/editTextStartDate"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:hint="@string/start_date" />
+    </LinearLayout>
 
     <!-- End Date -->
+    <LinearLayout
+        android:id="@+id/layoutEndDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutStartDate">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="@string/end_date_label" />
+
+        <EditText
+            android:id="@+id/editTextEndDate"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:hint="@string/end_date" />
+    </LinearLayout>
 
     <!-- Save Button -->
-
-
-    <!-- Cancel Button -->
-
-    <EditText
-        android:id="@+id/editTextDateHired"
-        android:layout_width="378dp"
-        android:layout_height="48dp"
-        android:ems="10"
-        android:hint="@string/date_hired"
-        android:inputType="date"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutManager"
-        app:layout_constraintVertical_bias="0.042" />
-
-    <EditText
-        android:id="@+id/editTextStartDate"
-        android:layout_width="378dp"
-        android:layout_height="50dp"
-        android:hint="@string/start_date"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDateHired"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <EditText
-        android:id="@+id/editTextEndDate"
-        android:layout_width="378dp"
-        android:layout_height="44dp"
-        android:hint="@string/end_date"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextStartDate"
-        app:layout_constraintVertical_bias="0.0" />
-
     <Button
         android:id="@+id/buttonSave"
         android:layout_width="wrap_content"
@@ -283,9 +376,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.309"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextEndDate"
+        app:layout_constraintTop_toBottomOf="@id/layoutEndDate"
         app:layout_constraintVertical_bias="0.515" />
 
+    <!-- Cancel Button -->
     <Button
         android:id="@+id/buttonCancel"
         android:layout_width="wrap_content"
@@ -297,42 +391,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.731"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextEndDate"
+        app:layout_constraintTop_toBottomOf="@id/layoutEndDate"
         app:layout_constraintVertical_bias="0.515" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layoutManager"
-        android:layout_width="374dp"
-        android:layout_height="34dp"
+    <!-- Note for Required Fields-->
+    <TextView
+        android:id="@+id/textViewNoteRequiredFields"
+        android:layout_width="104dp"
+        android:layout_height="105dp"
+        android:text="@string/note_required_fields"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/editTextCity"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutDepartment">
-
-        <TextView
-            android:id="@+id/labelManager"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="25dp"
-            android:gravity="end"
-            android:text="@string/manager_label"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/spinnerManager"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Spinner
-            android:id="@+id/spinnerManager"
-            android:layout_width="276dp"
-            android:layout_height="27dp"
-            android:spinnerMode="dropdown"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/labelManager"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.571" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintTop_toBottomOf="@+id/profileImage"
+        app:layout_constraintVertical_bias="0.029" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

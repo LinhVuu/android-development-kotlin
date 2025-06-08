@@ -5,6 +5,7 @@ package kbs.apps.mobiledevelopment.employeemanagementsystem
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
@@ -36,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Setup RecyclerView
-        recyclerView = findViewById(R.id.recyclerViewEmployee)
+        recyclerView = findViewById<RecyclerView>(R.id.recyclerViewEmployee)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         adapter = EmployeeAdapter { employee ->
@@ -46,6 +47,7 @@ class MainActivity : AppCompatActivity() {
 
         employeeViewModel.allEmployees.observe(this) { employees ->
             adapter.submitList(employees)
+            Log.d("MainActivity", "Employee list size: ${employees.size}")
         }
 
         // Link to elements on the UI.

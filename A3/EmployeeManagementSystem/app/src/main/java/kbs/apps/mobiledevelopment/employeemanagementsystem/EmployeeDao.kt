@@ -5,8 +5,8 @@ import androidx.room.*
 
 @Dao
 interface EmployeeDao {
-    @Query("SELECT * FROM employee_table ORDER BY id ASC")
-    fun allEmployees(): LiveData<List<Employee>>
+    @Query("SELECT * FROM employee_table ORDER BY date_hired DESC")
+    fun getAllEmployees(): LiveData<List<Employee>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertEmployee(employee: Employee)

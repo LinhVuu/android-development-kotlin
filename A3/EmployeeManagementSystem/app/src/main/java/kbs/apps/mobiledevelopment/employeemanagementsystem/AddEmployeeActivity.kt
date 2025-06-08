@@ -1,22 +1,37 @@
 package kbs.apps.mobiledevelopment.employeemanagementsystem
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
+import androidx.activity.viewModels
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.time.LocalDate
 
 class AddEmployeeActivity : AppCompatActivity() {
+
+    // Define the view model and the launcher.
+    private val employeeViewModel: EmployeeViewModel by viewModels()
+    private lateinit var imagePickerLauncher: ActivityResultLauncher<Intent>
+
+    // Initialise variables to hold the URI.
+    var selectedImageUri: Uri? = null
+    val PICK_IMAGE_REQUEST = 1
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -56,6 +71,29 @@ class AddEmployeeActivity : AppCompatActivity() {
                 employeesFullname
             )
             managerSpinner.adapter = managerAdapter
+        }
+
+        // Register the launcher.
+        imagePickerLauncher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) { result ->
+            if (result.resultCode == RESULT_OK) {
+                val uri = result.data?.data
+                if (uri != null) {
+                    selectedImageUri = uri
+                    val imageView = findViewById<ImageView>(R.id.profileImage)
+                    imageView.setImageURI(uri)
+                }
+            }
+        }
+
+        // Open image picker when users click on the image.
+        val imageView = findViewById<ImageView>(R.id.profileImage)
+        imageView.setOnClickListener {
+            val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
+            intent.addCategory(Intent.CATEGORY_OPENABLE)
+            intent.type = "image/*"
+            imagePickerLauncher.launch(intent)
         }
 
         // When users click on the 'Cancel' button, go back to previous screen.
@@ -98,33 +136,67 @@ class AddEmployeeActivity : AppCompatActivity() {
                 department.isEmpty() || reportTo.isEmpty() || dateHired.isEmpty()
             ) {
                 Toast.makeText(this, "Please fill in all required fields.", Toast.LENGTH_SHORT).show()
-            } else {
-                val employee = Employee(
-                    imageUri = "default_photo",
-                    firstName = firstName,
-                    lastName = lastName,
-                    phone = phone,
-                    email = email,
-                    position = position,
-                    department = department,
-                    reportTo = reportTo,
-                    dateHired = LocalDate.parse(dateHired),
-                    latestSalary = salary.toDoubleOrNull() ?: 0.0,
-                    address = address,
-                    city = city,
-                    startDate = LocalDate.parse(startDate),
-                    isOngoing = endDate.isEmpty(),
-                    endDate = LocalDate.parse(endDate),
-                )
+                return@setOnClickListener
+            }
 
-                lifecycleScope.launch(Dispatchers.IO) {
-                    val db = EmployeeDatabase.getDatabase(applicationContext)
-                    db.employeeDao().insertEmployee(employee)
-                    withContext(Dispatchers.Main) {
-                        finish()
-                    }
-                }
+            // Date validation and parsing.
+            val formatter = java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy")
+
+            // Validate date formats.
+            val parsedDateHired = try {
+                java.time.LocalDate.parse(dateHired, formatter)
+            } catch (e: Exception) {
+                Toast.makeText(this, "Date Hired must be in DD/MM/YYYY format.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            val parsedStartDate = try {
+                java.time.LocalDate.parse(startDate, formatter)
+            } catch (e: Exception) {
+                Toast.makeText(this, "Start Date must be in DD/MM/YYYY format.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            val parsedEndDate = if (endDate.isEmpty()) null else try {
+                java.time.LocalDate.parse(endDate, formatter)
+            } catch (e: Exception) {
+                Toast.makeText(this, "End Date must be in DD/MM/YYYY format.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            val employee = Employee(
+                imageUri = selectedImageUri?.toString() ?: "default_photo",
+                firstName = firstName,
+                lastName = lastName,
+                phone = phone,
+                email = email,
+                position = position,
+                department = department,
+                reportTo = reportTo,
+                dateHired = parsedDateHired,
+                latestSalary = salary.toDoubleOrNull() ?: 0.0,
+                address = address,
+                city = city,
+                startDate = parsedStartDate,
+                isOngoing = parsedEndDate == null,
+                endDate = parsedEndDate
+            )
+
+            employeeViewModel.addEmployee(employee)
+            finish()
+        }
+    }
+
+    // Handle the result of image selection.
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK) {
+            data?.data?.let { uri ->
+                selectedImageUri = uri
+                val imageView = findViewById<ImageView>(R.id.profileImage)
+                imageView.setImageURI(uri)
             }
         }
     }
+
 }

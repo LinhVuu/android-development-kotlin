@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#FAFAFA"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:background="@android:color/white"
+        android:elevation="2dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginHorizontal="4dp">
+
+        <ImageView
+            android:id="@+id/imageViewPhoto"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginEnd="16dp"
+            android:scaleType="centerCrop" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1">
+
+            <!-- Initials -->
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/initialsLabel"
+                    style="@style/LabelTextMain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/initials_label" />
+
+                <TextView
+                    android:id="@+id/initials"
+                    style="@style/DataTextMain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/initials" />
+            </TableRow>
+
+            <!-- To have a space between 2 rows -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:background="@android:color/transparent" />
+
+            <!-- Full Name -->
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/fullNameLabel"
+                    style="@style/LabelTextMain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/full_name_label" />
+
+                <TextView
+                    android:id="@+id/fullName"
+                    style="@style/DataTextMain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/full_name" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:background="@android:color/transparent" />
+
+            <!-- Address Street -->
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/positionLabel"
+                    style="@style/LabelTextMain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/position_label" />
+
+                <TextView
+                    android:id="@+id/position"
+                    style="@style/DataTextMain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/position" />
+
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

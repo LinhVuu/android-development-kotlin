@@ -304,11 +304,10 @@
         android:id="@+id/layoutManager"
         android:layout_width="374dp"
         android:layout_height="34dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="180dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutDepartment"
-        tools:layout_editor_absoluteX="17dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutDepartment">
 
         <TextView
             android:id="@+id/labelManager"

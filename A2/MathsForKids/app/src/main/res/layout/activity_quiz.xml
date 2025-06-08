@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_view_app_title_quiz"
+            style='@style/TitleText'
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.156"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.087"
+            tools:layout_conversion_absoluteHeight="27dp"
+            tools:layout_conversion_absoluteWidth="111dp" />
+
+        <Button
+            android:id="@+id/button_result_quiz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/show_result_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.818"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/table_layout_questions_quiz"
+            app:layout_constraintVertical_bias="0.504"
+            tools:layout_conversion_absoluteHeight="48dp"
+            tools:layout_conversion_absoluteWidth="147dp" />
+
+        <Button
+            android:id="@+id/button_reset_quiz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reset_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.222"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/table_layout_questions_quiz" />
+
+        <TableLayout
+            android:id="@+id/table_layout_questions_quiz"
+            android:layout_width="339dp"
+            android:layout_height="355dp"
+            android:background="@android:color/transparent"
+            android:stretchColumns="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.59">
+
+            <!-- Question 1 (Quick answer) -->
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/text_view_number1_quiz"
+                    style="@style/QuestionNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/question1_number" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/text_view_question1_quiz"
+                    style="@style/QuestionText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/question1_text" />
+
+                <EditText
+                    android:id="@+id/edit_text_answer1_quiz"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:hint="@string/answer_text"
+                    android:inputType="number" />
+
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:background="@android:color/transparent" />
+
+            <!-- Question 2 (Yes/No) -->
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/text_view_number2_quiz"
+                    style="@style/QuestionNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/question2_number" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/text_view_question2_quiz"
+                    style="@style/QuestionText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/question2_text" />
+
+                <RadioGroup
+                    android:id="@+id/radio_group_answer2_quiz"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radio_button_answer2_correct_quiz"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/correct_text" />
+
+                    <RadioButton
+                        android:id="@+id/radio_button_answer2_incorrect_quiz"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/incorrect_text" />
+                </RadioGroup>
+
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:background="@android:color/transparent" />
+
+            <!-- Question 3 (Select one) -->
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/text_view_number3_quiz"
+                    style="@style/QuestionNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/question3_number" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/text_view_question3_quiz"
+                    style="@style/QuestionText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/question3_text" />
+
+                <!-- Use spinner to display combo box for multiple choices questions -->
+                <!-- https://developer.android.com/develop/ui/views/components/spinner -->
+                <Spinner
+                    android:id="@+id/spinner_answer3_quiz"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown" />
+
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:background="@android:color/transparent" />
+
+            <!-- Question 4 (Select two) -->
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/text_view_number4_quiz"
+                    style="@style/QuestionNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/question4_number" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/text_view_question4_quiz"
+                    style="@style/QuestionText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/question4_text" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/check_box_answer4_option1_quiz"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="8" />
+
+                    <CheckBox
+                        android:id="@+id/check_box_answer4_option2_quiz"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="89" />
+
+                    <CheckBox
+                        android:id="@+id/check_box_answer4_option3_quiz"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="100" />
+
+                </LinearLayout>
+
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:background="@android:color/transparent" />
+
+            <!-- Question 5 (Quick answer) -->
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/text_view_number5_quiz"
+                    style="@style/QuestionNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/question5_number" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/text_view_question5_quiz"
+                    style="@style/QuestionText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/question5_text" />
+
+                <EditText
+                    android:id="@+id/edit_text_answer5_quiz"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:hint="@string/answer_text"
+                    android:inputType="number"
+                    android:minHeight="80dp"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp" />
+
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:background="@android:color/transparent" />
+
+        </TableLayout>
+
+        <ImageView
+            android:id="@+id/image_view_quiz"
+            android:layout_width="194dp"
+            android:layout_height="177dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.348"
+            app:layout_constraintStart_toEndOf="@+id/text_view_app_title_quiz"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.055"
+            app:srcCompat="@drawable/maths_for_kids" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

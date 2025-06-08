@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Application de Gestion des Employés</string>
+    <string name="edit_button">Modifier</string>
+    <string name="page_title">Profil de l\'Employé</string>
+    <string name="profile_image">Image de profil</string>
+    <string name="gender_label">Genre</string>
+    <string name="gender">Femme</string>
+    <string name="birthday_label">Anniversaire 🎉</string>
+    <string name="birthday">01/01/2000</string>
+    <string name="first_name_label">Prénom</string>
+    <string name="first_name">Snow</string>
+    <string name="last_name_label">Nom</string>
+    <string name="last_name">White</string>
+    <string name="phone_number_label">Téléphone</string>
+    <string name="phone_number">+61123456789</string>
+    <string name="work_info_label">Informations Professionnelles</string>
+    <string name="email_label">Email</string>
+    <string name="email">snow.white@kbs.edu.au</string>
+    <string name="location_label">Localisation</string>
+    <string name="location">Australie</string>
+    <string name="position_label">Poste</string>
+    <string name="position">Analyste de Données</string>
+    <string name="department_label">Département</string>
+    <string name="department">Informatique</string>
+    <string name="manager_label">Rapporte à</string>
+    <string name="manager">Linh Vuu</string>
+    <string name="date_hired_label">Date d\'Embauche</string>
+    <string name="date_hired">01/03/2025</string>
+    <string name="start_date_label">Date de Début</string>
+    <string name="start_date">01/03/2025</string>
+    <string name="ongoing_employee_checkbox">Employé Permanent</string>
+    <string name="end_date_label">Date de Fin</string>
+    <string name="end_date">01/03/2026</string>
+    <string name="emergency_contact_label">Contact d\'Urgence</string>
+    <string name="emergency_contact">+61987654321</string>
+</resources>

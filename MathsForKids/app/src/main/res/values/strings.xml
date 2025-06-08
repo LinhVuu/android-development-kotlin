@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Maths For Kids</string>
+    <string name="title_text">Maths \n For \n Kids</string>
+    <string name="show_result_button">Result</string>
+    <string name="reset_button">Reset</string>
+    <string name="question1_number"><u>Question 1:</u></string>
+    <string name="question1_text">75 + 15 = ?</string>
+    <string name="answer_text">Enter your answer</string>
+    <string name="question2_number"><u>Question 2:</u></string>
+    <string name="question2_text">Verify: \n 10 + 2 = 12</string>
+    <string name="question3_number"><u>Question 3:</u></string>
+    <string name="question3_text">75 – 15 = ?</string>
+    <string name="question4_number"><u>Question 4:</u></string>
+    <string name="question4_text"> Which numbers are \n less than 99?</string>
+    <string name="question5_number"><u>Question 5:</u></string>
+    <string name="question5_text">15 : 5 = ?</string>
+    <string name="correct_text">Correct</string>
+    <string name="incorrect_text">Incorrect</string>
+    <string name="back_button">Back</string>
+</resources>

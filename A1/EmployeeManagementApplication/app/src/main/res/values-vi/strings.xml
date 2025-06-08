@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ứng Dụng Quản Lý Nhân Viên</string>
+    <string name="edit_button">Chỉnh Sửa</string>
+    <string name="page_title">Hồ Sơ Nhân Viên</string>
+    <string name="profile_image">Hình Chân Dung</string>
+    <string name="gender_label">Giới Tính</string>
+    <string name="gender">Nữ</string>
+    <string name="birthday_label">Ngày Sinh 🎉</string>
+    <string name="birthday">01/01/2000</string>
+    <string name="first_name_label">Tên</string>
+    <string name="first_name">Snow</string>
+    <string name="last_name_label">Họ</string>
+    <string name="last_name">White</string>
+    <string name="phone_number_label">Điện Thoại</string>
+    <string name="phone_number">+61123456789</string>
+    <string name="work_info_label">Thông Tin Công Việc</string>
+    <string name="email_label">Email</string>
+    <string name="email">snow.white@kbs.edu.au</string>
+    <string name="location_label">Địa Điểm</string>
+    <string name="location">Úc</string>
+    <string name="position_label">Chức Vụ</string>
+    <string name="position">Nhà Phân Tích Dữ Liệu</string>
+    <string name="department_label">Phòng Ban</string>
+    <string name="department">CNTT</string>
+    <string name="manager_label">Báo Cáo Cho</string>
+    <string name="manager">Linh Vuu</string>
+    <string name="date_hired_label">Ngày Tuyển Dụng</string>
+    <string name="date_hired">01/03/2025</string>
+    <string name="start_date_label">Ngày Bắt Đầu</string>
+    <string name="start_date">01/03/2025</string>
+    <string name="ongoing_employee_checkbox">Nhân Viên Chính Thức</string>
+    <string name="end_date_label">Ngày Kết Thúc</string>
+    <string name="end_date">01/03/2026</string>
+    <string name="emergency_contact_label">Liên Hệ Khẩn Cấp</string>
+    <string name="emergency_contact">+61987654321</string>
+</resources>

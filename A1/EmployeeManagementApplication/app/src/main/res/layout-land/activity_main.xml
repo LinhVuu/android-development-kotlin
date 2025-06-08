@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/contentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <!-- Page Title -->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/workInfoLayout"
+                android:layout_width="433dp"
+                android:layout_height="338dp"
+                android:layout_marginTop="3dp"
+                android:background="@android:color/transparent"
+                android:padding="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/personalDetailLayout"
+                app:layout_constraintTop_toBottomOf="@+id/workInformationLabel"
+                app:layout_constraintVertical_bias="0.0">
+
+                <TableLayout
+                    android:id="@+id/workInfoTable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:background="@android:color/transparent"
+                    android:stretchColumns="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <!-- Email -->
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/emailLabel"
+                            style="@style/LabelTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/email_label" />
+
+                        <TextView
+                            android:id="@+id/email"
+                            style="@style/DataTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/email" />
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:background="@android:color/transparent" />
+
+                    <!-- Location -->
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/locationLabel"
+                            style="@style/LabelTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/location_label" />
+
+                        <TextView
+                            android:id="@+id/location"
+                            style="@style/DataTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/location" />
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:background="@android:color/transparent" />
+
+                    <!-- Position -->
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/positionLabel"
+                            style="@style/LabelTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/position_label" />
+
+                        <TextView
+                            android:id="@+id/position"
+                            style="@style/DataTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/position" />
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:background="@android:color/transparent" />
+
+                    <!-- Department -->
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/departmentLabel"
+                            style="@style/LabelTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/department_label" />
+
+                        <TextView
+                            android:id="@+id/department"
+                            style="@style/DataTextMain"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/department" />
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:background="@android:color/transparent" />
+
+                    <!-- Manager -->
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/managerLabel"
+                            style="@style/LabelTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/manager_label" />
+
+                        <TextView
+                            android:id="@+id/manager"
+                            style="@style/DataTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/manager" />
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:background="@android:color/transparent" />
+
+                    <!-- Date Hired -->
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/dateHiredLabel"
+                            style="@style/LabelTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/date_hired_label" />
+
+                        <TextView
+                            android:id="@+id/dateHired"
+                            style="@style/DataTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/date_hired" />
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:background="@android:color/transparent" />
+
+                    <!-- Start Date -->
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/startDateLabel"
+                            style="@style/LabelTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/start_date_label" />
+
+                        <TextView
+                            android:id="@+id/startDate"
+                            style="@style/DataTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/start_date" />
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:background="@android:color/transparent" />
+
+                    <!-- On-going Employee -->
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/ongoingEmployeeLabel"
+                            style="@style/LabelTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="" />
+
+                        <CheckBox
+                            android:id="@+id/ongoingEmployee"
+                            style="@style/DataTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="@string/ongoing_employee_checkbox" />
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:background="@android:color/transparent" />
+
+                    <!-- End Date -->
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/endDateLabel"
+                            style="@style/LabelTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/end_date_label" />
+
+                        <TextView
+                            android:id="@+id/endDate"
+                            style="@style/DataTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/end_date" />
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:background="@android:color/transparent" />
+
+                    <!-- Emergency Contact -->
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/emergencyContactLabel"
+                            style="@style/LabelTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/emergency_contact_label" />
+
+                        <TextView
+                            android:id="@+id/emergencyContact"
+                            style="@style/DataTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/emergency_contact" />
+                    </TableRow>
+
+                </TableLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/pageTitle"
+                style="@style/TitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/page_title"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.209"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <!-- Personal Detail Card-->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/personalDetailLayout"
+                android:layout_width="390dp"
+                android:layout_height="186dp"
+                android:background="@drawable/top_background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.103"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pageTitle"
+                app:layout_constraintVertical_bias="0.336">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/roundCardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:elevation="0dp"
+                    app:cardCornerRadius="200dp"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="19dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/profileImage"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:contentDescription="@string/profile_image"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.0"
+                            app:srcCompat="@drawable/snow_white" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Personal Info Table -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/personalDetailTable"
+                    android:layout_width="208dp"
+                    android:layout_height="153dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/roundCardView"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:stretchColumns="1">
+
+                        <!-- First Name -->
+                        <TableRow>
+
+                            <TextView
+                                android:id="@+id/firstNameLabel"
+                                style="@style/LabelTextTop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/first_name_label" />
+
+                            <TextView
+                                android:id="@+id/firstName"
+                                style="@style/DataTextTop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/first_name" />
+                        </TableRow>
+
+                        <!-- To have a space between 2 rows -->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="6dp"
+                            android:background="@android:color/transparent" />
+
+                        <!-- Last Name -->
+                        <TableRow>
+
+                            <TextView
+                                android:id="@+id/lastNameLabel"
+                                style="@style/LabelTextTop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/last_name_label" />
+
+                            <TextView
+                                android:id="@+id/lastName"
+                                style="@style/DataTextTop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/last_name" />
+                        </TableRow>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="6dp"
+                            android:background="@android:color/transparent" />
+
+                        <!-- Gender -->
+                        <TableRow>
+
+                            <TextView
+                                android:id="@+id/genderLabel"
+                                style="@style/LabelTextTop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/gender_label" />
+
+                            <TextView
+                                android:id="@+id/gender"
+                                style="@style/DataTextTop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/gender" />
+                        </TableRow>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="6dp"
+                            android:background="@android:color/transparent" />
+
+                        <!-- Birthday -->
+                        <TableRow>
+
+                            <TextView
+                                android:id="@+id/birthdayLabel"
+                                style="@style/LabelTextTop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/birthday_label" />
+
+                            <TextView
+                                android:id="@+id/birthday"
+                                style="@style/DataTextTop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/birthday" />
+                        </TableRow>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="6dp"
+                            android:background="@android:color/transparent" />
+
+                        <!-- Phone Number -->
+                        <TableRow>
+
+                            <TextView
+                                android:id="@+id/phoneNumberLabel"
+                                style="@style/LabelTextTop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/phone_number_label" />
+
+                            <TextView
+                                android:id="@+id/phoneNumber"
+                                style="@style/DataTextTop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/phone_number" />
+                        </TableRow>
+
+                    </TableLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/workInformationLabel"
+                style="@style/TitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/work_info_label"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.583"
+                app:layout_constraintStart_toEndOf="@+id/pageTitle"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/edit_button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.252"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/personalDetailLayout"
+                app:layout_constraintVertical_bias="0.393" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

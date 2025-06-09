@@ -48,6 +48,7 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation("androidx.room:room-ktx:2.6.1")
+    androidTestImplementation(libs.androidx.espresso.contrib)
     kapt("androidx.room:room-compiler:2.6.1")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.5.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
@@ -56,4 +57,7 @@ dependencies {
     annotationProcessor("android.arch.persistence.room:compiler:1.1.1")
     implementation("androidx.room:room-runtime:2.6.1")
     implementation("com.google.android.material:material:1.11.0")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.0")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.0")
+    testImplementation("androidx.test:core:1.5.0")
 }

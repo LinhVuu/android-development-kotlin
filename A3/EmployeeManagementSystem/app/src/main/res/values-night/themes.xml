@@ -33,6 +33,11 @@
         <item name="android:textAllCaps">false</item>
     </style>
 
+    <!-- Item in Employee List. -->
+    <style name="linear_layout_color" parent="Widget.MaterialComponents.Button">
+        <item name="background">@color/black</item>
+    </style>
+
     <!-- Title Text. -->
     <style name="TitleText">
         <item name="android:textSize">25sp</item>

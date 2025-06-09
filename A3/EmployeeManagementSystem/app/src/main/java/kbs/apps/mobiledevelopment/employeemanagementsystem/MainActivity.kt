@@ -30,23 +30,20 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
-
         // Setup RecyclerView
         recyclerView = findViewById<RecyclerView>(R.id.recyclerViewEmployee)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
+        // Setup Adapter to show employee's details.
         adapter = EmployeeAdapter { employee ->
             showDetail(employee)
         }
         recyclerView.adapter = adapter
-
         employeeViewModel.allEmployees.observe(this) { employees ->
             adapter.submitList(employees)
+
+            // For debugging purposes.
+            // To show the number of employees in the database.
             Log.d("MainActivity", "Employee list size: ${employees.size}")
         }
 
@@ -66,9 +63,14 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    // Show Detail of each employee.
     private fun showDetail(employee: Employee) {
+
+        // Pass the employee to the next page to show details.
         val intent = Intent(this, DetailActivity::class.java)
         intent.putExtra("employee", employee)
+
+        // Start the next page.
         startActivity(intent)
     }
 

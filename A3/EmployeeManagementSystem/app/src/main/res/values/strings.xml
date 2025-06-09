@@ -1,12 +1,13 @@
 <resources>
     <string name="app_name">Employee Management System</string>
-    <string name="edit_button">Edit</string>
+    <string name="update_button">Update</string>
     <string name="delete_button">Delete</string>
     <string name="back_button">Back</string>
     <string name="save_button">Save</string>
     <string name="cancel_button">Cancel</string>
     <string name="page_title">Employee Profile</string>
     <string name="add_new_page_title">Add New Employee</string>
+    <string name="update_employee_title">Update Employee</string>
     <string name="profile_image">Profile Image</string>
     <string name="initials_label">Initials</string>
     <string name="initials">SW</string>
@@ -17,7 +18,7 @@
     <string name="last_name_label">Last Name</string>
     <string name="last_name">Enter Last Name</string>
     <string name="phone_number_label">Phone</string>
-    <string name="phone_number">Phone Number: 04123456789</string>
+    <string name="phone_number">Phone Number: +614123456789</string>
     <string name="work_info_label">Work Information</string>
     <string name="email_label">Email</string>
     <string name="email">example@gmail.com</string>
@@ -42,6 +43,7 @@
     <string name="end_date">DD/MM/YYYY</string>
     <string name="latest_salary_label">Latest Salary</string>
     <string name="latest_salary">e.g 50.5</string>
+    <string name="salary_format">%1$.2f AUD/hour</string>
     <string name="salary_unit">AUD/hour</string>
     <string name="add_employee">Add New</string>
     <string name="main_title">Employee List</string>

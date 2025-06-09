@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewEmployeeFragment">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/contentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Page Title -->
+            <TextView
+                android:id="@+id/pageTitle"
+                style="@style/TitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/page_title"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="8dp"/>
+
+            <LinearLayout
+                android:id="@+id/profileAndDetailsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/top_background"
+                android:layout_marginTop="20dp"
+                android:padding="8dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/roundCardView"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:elevation="0dp"
+                    app:cardCornerRadius="200dp"
+                    android:layout_gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/profileImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/profile_image"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/snow_white" />
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:id="@+id/personalDetailTable"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="16dp">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:stretchColumns="1">
+
+                        <!-- First Name -->
+                        <TableRow>
+                            <TextView
+                                android:id="@+id/firstNameLabel"
+                                style="@style/LabelTextTop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/first_name_label" />
+                            <TextView
+                                android:id="@+id/firstName"
+                                style="@style/DataTextTop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/first_name" />
+                        </TableRow>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="6dp"
+                            android:background="@android:color/transparent" />
+                        <!-- Last Name -->
+                        <TableRow>
+                            <TextView
+                                android:id="@+id/lastNameLabel"
+                                style="@style/LabelTextTop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/last_name_label" />
+                            <TextView
+                                android:id="@+id/lastName"
+                                style="@style/DataTextTop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/last_name" />
+                        </TableRow>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="6dp"
+                            android:background="@android:color/transparent" />
+                        <!-- Address Street -->
+                        <TableRow>
+                            <TextView
+                                android:id="@+id/addressLabel"
+                                style="@style/LabelTextTop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/address_label" />
+                            <TextView
+                                android:id="@+id/address"
+                                style="@style/DataTextTop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/address" />
+                        </TableRow>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="6dp"
+                            android:background="@android:color/transparent" />
+                        <!-- City -->
+                        <TableRow>
+                            <TextView
+                                android:id="@+id/cityLabel"
+                                style="@style/LabelTextTop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/city_label" />
+                            <TextView
+                                android:id="@+id/city"
+                                style="@style/DataTextTop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/city" />
+                        </TableRow>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="6dp"
+                            android:background="@android:color/transparent" />
+                        <!-- Phone Number -->
+                        <TableRow>
+                            <TextView
+                                android:id="@+id/phoneNumberLabel"
+                                style="@style/LabelTextTop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/phone_number_label" />
+                            <TextView
+                                android:id="@+id/phoneNumber"
+                                style="@style/DataTextTop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/phone_number" />
+                        </TableRow>
+                    </TableLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/workInformationLabel"
+                style="@style/TitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/work_info_label"
+                android:layout_gravity="center_horizontal"/>
+
+            <LinearLayout
+                android:id="@+id/workInfoLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@android:color/transparent"
+                android:padding="16dp">
+
+                <TableLayout
+                    android:id="@+id/workInfoTable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:stretchColumns="1">
+
+                    <!-- Email -->
+                    <TableRow>
+                        <TextView
+                            android:id="@+id/emailLabel"
+                            style="@style/LabelTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/email_label" />
+                        <TextView
+                            android:id="@+id/email"
+                            style="@style/DataTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/email" />
+                    </TableRow>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:background="@android:color/transparent" />
+                    <!-- Position -->
+                    <TableRow>
+                        <TextView
+                            android:id="@+id/positionLabel"
+                            style="@style/LabelTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/position_label" />
+                        <TextView
+                            android:id="@+id/position"
+                            style="@style/DataTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/position" />
+                    </TableRow>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:background="@android:color/transparent" />
+                    <!-- Latest Salary -->
+                    <TableRow>
+                        <TextView
+                            android:id="@+id/latestSalaryLabel"
+                            style="@style/LabelTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/latest_salary_label" />
+                        <TextView
+                            android:id="@+id/latestSalary"
+                            style="@style/DataTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/latest_salary" />
+                    </TableRow>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:background="@android:color/transparent" />
+                    <!-- Department -->
+                    <TableRow>
+                        <TextView
+                            android:id="@+id/departmentLabel"
+                            style="@style/LabelTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/department_label" />
+                        <TextView
+                            android:id="@+id/department"
+                            style="@style/DataTextMain"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/department" />
+                    </TableRow>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:background="@android:color/transparent" />
+                    <!-- Manager -->
+                    <TableRow>
+                        <TextView
+                            android:id="@+id/managerLabel"
+                            style="@style/LabelTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/manager_label" />
+                        <TextView
+                            android:id="@+id/manager"
+                            style="@style/DataTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/manager" />
+                    </TableRow>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:background="@android:color/transparent" />
+                    <!-- Date Hired -->
+                    <TableRow>
+                        <TextView
+                            android:id="@+id/dateHiredLabel"
+                            style="@style/LabelTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/date_hired_label" />
+                        <TextView
+                            android:id="@+id/dateHired"
+                            style="@style/DataTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/date_hired" />
+                    </TableRow>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:background="@android:color/transparent" />
+                    <!-- Start Date -->
+                    <TableRow>
+                        <TextView
+                            android:id="@+id/startDateLabel"
+                            style="@style/LabelTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/start_date_label" />
+                        <TextView
+                            android:id="@+id/startDate"
+                            style="@style/DataTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/start_date" />
+                    </TableRow>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:background="@android:color/transparent" />
+                    <!-- On-going Employee -->
+                    <TableRow>
+                        <TextView
+                            android:id="@+id/ongoingEmployeeLabel"
+                            style="@style/LabelTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="" />
+                        <CheckBox
+                            android:id="@+id/ongoingEmployee"
+                            style="@style/DataTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="@string/ongoing_employee_checkbox" />
+                    </TableRow>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:background="@android:color/transparent" />
+                    <!-- End Date -->
+                    <TableRow>
+                        <TextView
+                            android:id="@+id/endDateLabel"
+                            style="@style/LabelTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/end_date_label" />
+                        <TextView
+                            android:id="@+id/endDate"
+                            style="@style/DataTextMain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/end_date" />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
